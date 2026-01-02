@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Search, Loader2, MapPin } from 'lucide-react';
+import { Search, Loader2 } from 'lucide-react';
 
-export default function SearchBar({ onSearch, onLocationClick, isLoading }) {
+export default function SearchBar({ onSearch, isLoading }) {
     const [query, setQuery] = useState('');
 
     const handleSubmit = (e) => {
@@ -30,15 +30,6 @@ export default function SearchBar({ onSearch, onLocationClick, isLoading }) {
                     )}
                 </div>
             </form>
-
-            <button
-                onClick={onLocationClick}
-                disabled={isLoading}
-                title="Use Current Location"
-                className="p-4 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg text-slate-700 dark:text-slate-200 hover:bg-white/30 dark:hover:bg-white/10 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-                <MapPin size={24} />
-            </button>
         </div>
     );
 }
